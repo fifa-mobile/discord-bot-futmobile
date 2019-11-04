@@ -1,0 +1,5 @@
+auth.json
+pk.json
+*.swp
+google.json
+node_modules/
