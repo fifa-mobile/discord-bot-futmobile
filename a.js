@@ -11,8 +11,12 @@ client.on('ready', () => {
 client.on('message', msg => {
   console.log(`getting a message: ${msg}`);
   const parsed = parser.parse(msg, prefix);
+  const commands = ['help', 'league'];
   if(!parsed.success) return;
-  msg.reply('processing, please wait...');
+  if (commands.indexOf(parsed.command) === -1) {
+    msg.channel.send(`no command ${parsed.command}. try $help`);
+    return;
+  }
   const args = parsed.arguments;
   let options = {
     orderby: 'total',
@@ -40,9 +44,10 @@ client.on('message', msg => {
       + " - reverse: any string (0, false, etc.) Z-A 10-1 big to small"
       + "\n```"
     ;
-    msg.reply(reply);
+    msg.channel.send(reply);
   }
   if (parsed.command === 'league') {
+    msg.channel.send('processing, please wait...');
     var GoogleSpreadsheet = require('google-spreadsheet');
     var async = require('async');
      
@@ -85,7 +90,7 @@ client.on('message', msg => {
             o += str + "\n";
           }
           console.log(o);
-          msg.reply(o + "```");
+          msg.channel.send(o + "```");
         });
         step();
       },
