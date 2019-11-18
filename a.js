@@ -11,7 +11,7 @@ client.on('ready', () => {
 client.on('message', msg => {
   console.log(`getting a message: ${msg}`);
   const parsed = parser.parse(msg, prefix);
-  const commands = ['help', 'league'];
+  const commands = ['help', 'league', 'test'];
   if(!parsed.success) return;
   if (commands.indexOf(parsed.command) === -1) {
     msg.channel.send(`no command ${parsed.command}. try $help`);
@@ -46,6 +46,18 @@ client.on('message', msg => {
     ;
     msg.channel.send(reply);
   }
+  if (parsed.command === 'test') {
+    const reply = `
+\`\`\`css
+<html>
+  <head></head>
+  <body></body>
+</html>
+\`\`\`
+`
+    ;
+    msg.channel.send(reply);
+  }
   if (parsed.command === 'league') {
     msg.channel.send('processing, please wait...');
     var GoogleSpreadsheet = require('google-spreadsheet');
@@ -75,19 +87,51 @@ client.on('message', msg => {
       function workingWithRows(step) {
         sheet.getRows(options, function( err, rows ){
           console.log('Read '+rows.length+' rows');
-          let o = "\n```\n";
+          let o = "\n```markdown\n";
+          let str =
+            '#   ' +
+            'name'.padEnd(16, ' ') +
+            [
+              'ovr'.padEnd(3, ' '),
+              'chm'.padEnd(3, ' '),
+              'total'.padEnd(5, ' '),
+            ].join(" ")
+          ;
+          o += str + "\n";
+          let init = true;
+          let highest = 0;
+          let limited = 0;
           for (let i = 0; i < rows.length; i++) {
             let row = rows[i];
+            if (!row.name) continue;
+            if (init) {
+              highest = row.total;
+              init = 0;
+            }
+            if (!limited && row.total < highest - 10) {
+              break;
+              o += ''.padEnd(42, '-') + "\n";
+              limited = 1;
+            }
             let str =
-              (i + 1).toString().padStart(3, ' ') + '. ' +
-              row.name.padEnd(24, '.') +
+              (i + 1).toString().padStart(2, ' ') + '. ' +
+              row.name.padEnd(16, '.') +
               [
-                row.ovr.padStart(4, ' '),
-                row.chm.padStart(4, ' '),
-                row.total.padStart(4, ' '),
+                row.ovr.padStart(3, ' '),
+                row.chm.padStart(3, ' '),
+                row.total.padStart(5, ' '),
+                row.last1==='1'?'✔️':
+                  (row.last1==='0'?'❌':' '),
+                row.last2==='1'?'✔️':
+                  (row.last2==='0'?'❌':' '),
+                row.last3==='1'?'✔️':
+                  (row.last3==='0'?'❌':' '),
               ].join(" ")
             ;
             o += str + "\n";
+            if ( i === 11 ) {
+              o += ''.padEnd(42, '-') + "\n";
+            }
           }
           console.log(o);
           msg.channel.send(o + "```");
