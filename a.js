@@ -1,6 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const auth = require('./auth.json');
+var auth = false;
+try {
+  auth = require('./auth.json');
+} catch (e) {
+  auth = JSON.parse(process.env.auth);
+}
 const parser = require('discord-command-parser');
 const prefix = "$";
 
@@ -68,7 +73,12 @@ client.on('message', msg => {
      
     async.series([
       function setAuth(step) {
-        var creds = require('./pk.json');
+        var creds = false;
+        try {
+          creds = require('./pk.json');
+        } catch (e) {
+          creds = JSON.parse(process.env.pk);
+        }
         var creds_json = {
           client_email: 'yourserviceaccountemailhere@google.com',
           private_key: 'your long private key stuff here'
