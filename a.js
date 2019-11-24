@@ -108,7 +108,7 @@ client.on('message', msg => {
       function workingWithRows(step) {
         sheet.getRows(options, function( err, rows ){
           console.log('Read '+rows.length+' rows');
-          let o = "\n```markdown\n";
+          let o = "\n```\n";
           let str =
             '#   ' +
             'name'.padEnd(16, ' ') +
