@@ -27,7 +27,10 @@ client.on('ready', () => {
 client.on('message', msg => {
   console.log(`getting a message: ${msg}`);
   const parsed = parser.parse(msg, prefix);
-  const commands = ['help', 'league', 'test'];
+  const commands = [
+    'help', 'league', 'test', 'tour',
+    'read',
+  ];
   if(!parsed.success) return;
   if (commands.indexOf(parsed.command) === -1) {
     msg.channel.send(`no command ${parsed.command}. try $help`);
@@ -41,6 +44,9 @@ client.on('message', msg => {
   if (args[0]) options.orderby = args[0];
   if (args[1]) options.limit = args[1];
   if (args[2]) options.reverse = false;
+  if (parsed.command === 'read') {
+    require('./story.js')(client, msg);
+  }
   if (parsed.command === 'help') {
     const reply = "```\n"
       + "prefix $; $help - to show this message"
@@ -73,6 +79,9 @@ client.on('message', msg => {
 `
     ;
     msg.channel.send(reply);
+  }
+  if (parsed.command === 'tour') {
+    require('./sheet.js')(args, msg);
   }
   if (parsed.command === 'league') {
     msg.channel.send('processing, please wait...');
@@ -130,7 +139,7 @@ client.on('message', msg => {
               init = 0;
             }
             if (!limited && row.total < highest - 10) {
-              break;
+              //break;
               o += ''.padEnd(42, '-') + "\n";
               limited = 1;
             }
