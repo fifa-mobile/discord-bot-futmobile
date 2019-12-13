@@ -1,6 +1,5 @@
 module.exports = (args, msg) => {
   console.log('args:', args);
-  msg.channel.send('processing, please wait...');
   var GoogleSpreadsheet = require('google-spreadsheet');
   var async = require('async');
    
