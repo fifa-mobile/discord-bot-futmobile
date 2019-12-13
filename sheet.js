@@ -32,6 +32,11 @@ module.exports = (args, msg) => {
             require('./tour-fixtures')(args, msg, sheet);
             break;
           }
+          if (sheet.title === 'tour-standing'
+          && args[0] == 'standing') {
+            require('./tour-standing')(args, msg, sheet);
+            break;
+          }
         }
         step();
       });
