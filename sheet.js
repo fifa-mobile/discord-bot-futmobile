@@ -28,13 +28,41 @@ module.exports = (args, msg) => {
             'sheet #'+i+' : '+sheet.title+' '+sheet.rowCount
             +'x'+sheet.colCount
           );
-          if (sheet.title === 'tour' && args[0] == 'fixtures') {
-            require('./tour-fixtures')(args, msg, sheet);
+          if (
+            sheet.title === 'tour' && args[0] === 'standing'
+          ) {
+            require('./tour-score')(args, msg, sheet, true);
             break;
           }
-          if (sheet.title === 'tour-standing'
-          && args[0] == 'standing') {
-            require('./tour-standing')(args, msg, sheet);
+          if (
+            sheet.title === 'tour' && args[0] === 'score'
+          ) {
+            if (!args[2] && !args[3]) {
+              require('./tour-score')(args, msg, sheet);
+              break;
+            }
+            if (
+              !args[1] || !args[2] || !args[3]
+            ) {
+              msg.channel.send('you need 3 arguments!');
+              break;
+            }
+            if (
+              !(!isNaN(args[1]) && args[1] > 0)
+              &&
+              !(!isNaN(args[2]) && args[2] > 0)
+              &&
+              !(!isNaN(args[3]) && args[3] > 0)
+            ) {
+              msg.channel.send(
+                'the arguments must be unsigned integer !');
+              break;
+            }
+            require('./tour-score')(args, msg, sheet);
+            break;
+          }
+          if (sheet.title === 'tour' && args[0] == 'fixtures') {
+            require('./tour-fixtures')(args, msg, sheet);
             break;
           }
         }

@@ -14,7 +14,8 @@ module.exports = (args, msg, sheet, players) => {
       let score = cell.value.split('-');
       score = score.map(s => s.trim());
       let match =
-        players[cell.row - 2].padEnd(16, ' ')
+        (i + 1).toString().padStart(2, ' ') + '| '
+        + players[cell.row - 2].padEnd(16, ' ')
         + score[0].padStart(3, ' ')
         + ' vs '
         + score[1].padEnd(3, ' ')
