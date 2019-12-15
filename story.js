@@ -8,8 +8,9 @@ module.exports = (client, msg) => {
   if (
     msg.channel.name === 'x'
     || msg.channel.name === 'one_word_story'
+    || true
   ) {
-    msg.channel.fetchMessages().then(
+    channel.fetchMessages().then(
       messages => {
         console.log('messages count: '+messages.size);
         let story = [];
