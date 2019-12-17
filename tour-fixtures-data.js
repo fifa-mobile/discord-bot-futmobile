@@ -1,4 +1,4 @@
-module.exports = (args, msg, sheet, players) => {
+module.exports = (args, msg, sheet, players, client) => {
   let count = players.length + 1;
   sheet.getCells({
     'min-row': 2,
@@ -24,6 +24,39 @@ module.exports = (args, msg, sheet, players) => {
       ;
       if (args[1] === 'played' && !isPlayed) continue;
       if (args[1] === 'left' && isPlayed) continue;
+      let user = msg.mentions.users.first();
+      let guild = client.guilds.get(msg.guild.id);
+      let member = guild.member(user);
+      let nickname = member ? member.displayName : null;
+      console.log(
+        args[1]
+        , players[cell.row - 2]
+        , players[cell.col- 2]
+        , players[cell.row - 2] !== args[1]
+        , players[cell.col- 2] !== args[1]
+        , nickname
+      );
+      if (
+        args[1]
+        &&
+        args[1] !== 'played'
+        &&
+        args[1] !== 'left'
+        &&
+        (
+          (
+            args[1] !== players[cell.row - 2]
+            &&
+            nickname !== players[cell.row - 2]
+          )
+          &&
+          (
+            args[1] !== players[cell.col - 2]
+            &&
+            nickname !== players[cell.col - 2]
+          )
+        )
+      ) continue;
       o += match + "\n";
     }
     console.log(o);

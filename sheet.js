@@ -1,4 +1,4 @@
-module.exports = (args, msg) => {
+module.exports = (args, msg, client) => {
   console.log('args:', args);
   var GoogleSpreadsheet = require('google-spreadsheet');
   var async = require('async');
@@ -62,7 +62,7 @@ module.exports = (args, msg) => {
             break;
           }
           if (sheet.title === 'tour' && args[0] == 'fixtures') {
-            require('./tour-fixtures')(args, msg, sheet);
+            require('./tour-fixtures')(args, msg, sheet, client);
             break;
           }
         }

@@ -1,4 +1,4 @@
-module.exports = (args, msg, sheet) => {
+module.exports = (args, msg, sheet, client) => {
   sheet.getCells({
     'min-row': 1,
     'max-row': 1,
@@ -15,7 +15,7 @@ module.exports = (args, msg, sheet) => {
     }
     console.log('players', players);
     require('./tour-fixtures-data.js')(
-      args, msg, sheet, players
+      args, msg, sheet, players, client
     );
   });
 };

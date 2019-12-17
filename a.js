@@ -81,7 +81,7 @@ client.on('message', msg => {
     msg.channel.send(reply);
   }
   if (parsed.command === 'tour') {
-    require('./sheet.js')(args, msg);
+    require('./sheet.js')(args, msg, client);
   }
   if (parsed.command === 'league') {
     msg.channel.send('processing, please wait...');
