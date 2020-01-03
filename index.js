@@ -1,6 +1,5 @@
 require('./common/home.js')();
 let u = require('./common/Util.js');
-
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -14,8 +13,8 @@ client.on('message', msg => {
   const prefix = "$";
   const parsed = parser.parse(msg, prefix);
   const commands = [
-    'help', 'league', 'test', 'tour',
-    'read',
+    'help', 'league', 'test', 'tour', 'read',
+    'hst',
   ];
   if(!parsed.success) return;
   if (commands.indexOf(parsed.command) === -1) {
@@ -23,7 +22,7 @@ client.on('message', msg => {
     return;
   }
   const args = parsed.arguments;
-  require('./bot.js')(u, msg, parsed.command, args);
+  require('./bot.js')(u, msg, parsed.command, args, client);
 });
 
 let auth = false;
