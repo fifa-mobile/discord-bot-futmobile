@@ -55,7 +55,7 @@ class Standings {
     let heading =
       '# ' +
       '|' +
-      'Team'.padEnd(13, ' ') +
+      'Team'.padEnd(10, ' ') +
       '|' +
       'P'.padEnd(2, ' ') +
       '|' +
@@ -74,13 +74,13 @@ class Standings {
       'GD'.padEnd(2, ' ') +
       '\n';
     o += heading;
-    o += ''.padEnd(42, '-') + '\n';
+    o += ''.padEnd(39, '-') + '\n';
     for (let i = 0; i < this.players.length; i++) {
       let p = this.players[i];
       o +=
         (i + 1).toString().padStart(2, ' ') +
         '|' +
-        p.name.padEnd(13, ' ') +
+        p.name.padEnd(10, ' ') +
         '|' +
         p.P.toString().padStart(2, ' ') +
         '|' +

@@ -14,7 +14,7 @@ client.on('message', msg => {
   const parsed = parser.parse(msg, prefix);
   const commands = [
     'help', 'league', 'test', 'tour', 'read',
-    'hst',
+    'hst', 'vsa',
   ];
   if(!parsed.success) return;
   if (commands.indexOf(parsed.command) === -1) {
