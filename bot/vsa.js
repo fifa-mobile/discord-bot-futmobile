@@ -12,14 +12,12 @@ module.exports = (u, msg, args) => {
       'max-row': 1,
       'return-empty': !true,
     }, (err, cells) => {
-      console.log(err);
       let players = [];
       for (let i = 0; i < cells.length; i++) {
         let cell = cells[i];
         if (cell.value === 'players') continue;
         players.push(cell.value);
       }
-      console.log(players);
 
       let count = players.length + 1;
       let standings = require('../common/Standings.js')();
@@ -28,9 +26,9 @@ module.exports = (u, msg, args) => {
         let standing = require(
           '../common/Standing.js'
         )(player);
-        console.log(standings, standing);
         standings.add(standing);
       }
+
       sheet.getCells({
         'min-row': 2,
         'max-row': count,
@@ -38,19 +36,18 @@ module.exports = (u, msg, args) => {
         'max-col': count,
         'return-empty': !true,
       }, (err, cells) => {
-        console.log(err);
         let id = args[1];
         let o = '';
         for (let i = 0; i < cells.length; i++) {
           let cell = cells[i];
-          if (id == (i + 1) && !isStanding) {
+          if (id == (i + 1) && args[0] === 'result') {
             if (args[2] === undefined) {
               cell.value = '-';
             } else {
               cell.value = args[2] + ' - ' + args[3];
             }
             cell.save();
-            msg.channel.send('the fixture updated!');
+            u.w('the fixture updated!');
           }
           let score = cell.value.split('-');
           score = score.map(s => s.trim());
@@ -72,7 +69,11 @@ module.exports = (u, msg, args) => {
           ;
           o += match + "\n";
         }
-        u.w(standings.table());
+        if (args[0] === 'standing') {
+          console.log('aaaaaaaaaaa');
+          u.w(standings.table());
+        }
+        console.log(args);
       });
     });
   };
