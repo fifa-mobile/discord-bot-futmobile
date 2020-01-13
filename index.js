@@ -8,7 +8,6 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  u.setMsg(msg);
   const parser = require('discord-command-parser');
   const prefix = "$";
   const parsed = parser.parse(msg, prefix);
@@ -16,12 +15,17 @@ client.on('message', msg => {
     'help', 'league', 'test', 'tour', 'read',
     'hst', 'vsa',
   ];
+  const args = parsed.arguments;
   if(!parsed.success) return;
+
+  u.setMsg(msg);
+  u.setArgs(args);
+  u.setClient(client)
+
   if (commands.indexOf(parsed.command) === -1) {
     u.w(`no command ${parsed.command}. try $help`);
     return;
   }
-  const args = parsed.arguments;
   require('./bot.js')(u, msg, parsed.command, args, client);
 });
 

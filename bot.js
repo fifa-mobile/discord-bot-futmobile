@@ -15,8 +15,23 @@ module.exports = (u, msg, cmd, args, client) => {
     require('./sheet.js')(args, msg, client);
   }
   if (cmd === 'vsa') {
+    if (
+      u.a[0] === undefined
+      ||
+      (
+        !u.a[0].includes('standing')
+        &&
+        !u.a[0].includes('fixture')
+        &&
+        !u.a[0].includes('score')
+      )
+    ) {
+      u.w('the $vsa commands are: standing/fixture/score');
+      return;
+    }
+
     require('./common/sheets.js')(
-      require('./bot/vsa.js')(u, msg, args)
+      require('./bot/vsa.js')(u, args)
     );
   }
   if (cmd === 'league') {

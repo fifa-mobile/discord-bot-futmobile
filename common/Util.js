@@ -6,7 +6,17 @@ class Util {
   static setMsg(msg) {
     this.msg = msg;
   }
+
+  static setArgs(a) {
+    this.a = a;
+  }
+
+  static setClient(c) {
+    this.c = c;
+  }
 }
 Util.msg = false;
+Util.a = [];
+Util.c = null;
 
 module.exports = Util;
