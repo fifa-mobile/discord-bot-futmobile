@@ -24,9 +24,11 @@ module.exports = (u, msg, cmd, args, client) => {
         !u.a[0].includes('fixture')
         &&
         !u.a[0].includes('score')
+        &&
+        !u.a[0].includes('round')
       )
     ) {
-      u.w('the $vsa commands are: standing/fixture/score');
+      u.w('the $vsa commands are: standing/fixture/score/round');
       return;
     }
 
