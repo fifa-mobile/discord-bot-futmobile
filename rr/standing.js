@@ -1,16 +1,6 @@
 module.exports = (u, players, standings, cells) => {
-  let id = u.a[1];
   for (let i = 0; i < cells.length; i++) {
     let cell = cells[i];
-    if (id == (i + 1) && u.a[0] === 'score') {
-      if (u.a[2] === undefined) {
-        cell.value = '-';
-      } else {
-        cell.value = u.a[2] + ' - ' + u.a[3];
-      }
-      cell.save();
-      u.w('the fixture updated!');
-    }
     let score = cell.value.split('-');
     score = score.map(s => s.trim());
     let player0 = standings.get(players[cell.row - 2]);
@@ -22,7 +12,5 @@ module.exports = (u, players, standings, cells) => {
       player1.add(score1, score0);
     }
   }
-  if (u.a[0] === 'standing') {
-    u.w(standings.table());
-  }
+  u.w(standings.table());
 };

@@ -36,6 +36,10 @@ module.exports = (u, args) => {
         'max-col': count,
         'return-empty': !true,
       }, (err, cells) => {
+        if (u.a[0].includes('score')) {
+          require('../rr/score.js')
+            (u, players, standings, cells);
+        }
         if (u.a[0].includes('standing')) {
           require('../rr/standing.js')
             (u, players, standings, cells);
