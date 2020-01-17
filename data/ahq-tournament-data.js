@@ -6,7 +6,10 @@ function showParticipants(res, sheet, count) {
     'max-col': 1,
     'return-empty': true,
   }, (e, cells) => {
-    const data = cells.map(e => e.value);
+    const data = {
+      type: 'locked',
+      content: cells.map(e => e.value),
+    };
     res.write(JSON.stringify(data));
     res.end();
   });
@@ -23,13 +26,17 @@ function main(u, res, sheets) {
     offset: 1,
     limit: 1,
   }, (e, rows) => {
-    let data = {};
+    let data = {
+      type: 'unlocked',
+      content: {},
+    };
     for(let i = 0; i < rows.length; i++) {
       let row = rows[i];
-      data.role = row.role;
-      data.date = row.date;
-      data.count = parseInt(row.count);
-      data.locked = (row.locked === 'TRUE');
+      data.content.role = row.role;
+      data.content.date = row.date;
+      data.content.count = parseInt(row.count);
+      data.content.locked = (row.locked === 'TRUE');
+      data.content.prefix = row.prefix;
     }
     console.log(data);
     if (data.locked) {
@@ -38,6 +45,7 @@ function main(u, res, sheets) {
     }
     res.write(JSON.stringify(data));
     res.end();
+    return;
   });
 }
 

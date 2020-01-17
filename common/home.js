@@ -11,6 +11,7 @@ module.exports = (u) => {
   router.register('/data', function(req, res) {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
+    res.setHeader("Access-Control-Allow-Origin", "*");
     require('./sheets.js')(
       require('../data/ahq-tournament-data.js')(u, res)
       , '19HSTRRyScAtnzyYcXCFz_9rzopum5jLi7dQ5YpAgl8k'
