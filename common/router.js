@@ -1,7 +1,7 @@
-var handlerFactory = require('./handler');
-var fs = require('fs');
-var parser = require('url');
-var handlers = {};
+const handlerFactory = require('./handler');
+const fs = require('fs');
+const parser = require('url');
+const handlers = {};
 
 exports.clear = function() {
   handlers = {};
@@ -13,14 +13,14 @@ exports.register = function(url, method) {
 
 exports.route = function(req) {
   url = parser.parse(req.url, true);
-  var handler = handlers[url.pathname];
+  const handler = handlers[url.pathname];
   if (!handler) handler = this.missing(req)
   return handler;
 }
 
 exports.missing = function(req) {
-  var url = parser.parse(req.url, true);
-  var path = __dirname + "/public" + url.pathname
+  const url = parser.parse(req.url, true);
+  const path = __dirname + "/public" + url.pathname
   try {    
     data = fs.readFileSync(path);
     mime = req.headers.accepts || 'text/html'

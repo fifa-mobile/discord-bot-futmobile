@@ -1,17 +1,14 @@
-function showParticipants(res, sheet, count) {
+function showParticipants(res, sheet, data) {
   sheet.getCells({
     'min-row': 1,
-    'max-row': count,
+    'max-row': data.content.count,
     'min-col': 1,
     'max-col': 1,
     'return-empty': true,
   }, (e, cells) => {
-    const data = {
-      type: 'locked',
-      content: cells.map(e => e.value),
-    };
-    res.write(JSON.stringify(data));
-    res.end();
+    data.content.teams = cells.map(e => e.value);
+    data.type = 'locked';
+    res.end(JSON.stringify(data));
   });
 }
 
@@ -39,12 +36,11 @@ function main(u, res, sheets) {
       data.content.prefix = row.prefix;
     }
     console.log(data);
-    if (data.locked) {
-      showParticipants(res, pSheet, data.count);
+    if (data.content.locked) {
+      showParticipants(res, pSheet, data);
       return;
     }
-    res.write(JSON.stringify(data));
-    res.end();
+    res.end(JSON.stringify(data));
     return;
   });
 }
