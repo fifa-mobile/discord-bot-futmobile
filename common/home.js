@@ -32,7 +32,7 @@ module.exports = (u) => {
     if (url === '/') {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/plain');
-      res.end('1!\n');
+      res.end('2!\n');
     } else if (url === '/hi') {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/plain');
