@@ -1,23 +1,18 @@
 function addParticipants(sheet, members) {
-  sheet.clear(e => {
-    if (e) {
-      u.w('error clearing the sheet!');
-      return;
-    }
     sheet.getCells({
       'min-row': 1,
-      'max-row': members.length,
+      'max-row': 1000,
       'min-col': 1,
       'max-col': 1,
       'return-empty': true,
     }, (err, cells) => {
       for (let i = 0; i < cells.length; i++) {
         let cell = cells[i], member = members[i];
-        cell.value = member;
+        cell.value = member?member:'';
       }
+      console.log('bbbbbbbbbbbbbbbbb');
       sheet.bulkUpdateCells(cells);
     });
-  });
 }
 
 function main(u, sheets) {
@@ -50,6 +45,7 @@ function main(u, sheets) {
       , members.length
     );
     row.count = members.length;
+    console.log('aaaaaaaaaaaaaaaa');
     row.save(e => {
       if (e) {
         u.w('error saving data.count!');
