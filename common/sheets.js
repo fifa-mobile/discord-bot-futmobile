@@ -1,7 +1,9 @@
-module.exports = (m) => {
+module.exports = (
+  m, sheetId = '1kK6L2u0G5KNbUCFBuyBheqFWbXZdH5ZcDHEkbuoE6qo'
+) => {
   let GoogleSpreadsheet = require('google-spreadsheet');
   let async = require('async');
-  let doc = new GoogleSpreadsheet('1kK6L2u0G5KNbUCFBuyBheqFWbXZdH5ZcDHEkbuoE6qo');
+  let doc = new GoogleSpreadsheet(sheetId);
   let sheets;
 
   async.series([

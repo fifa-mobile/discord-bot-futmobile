@@ -3,20 +3,29 @@ class Util {
     this.msg.channel.send(`\`\`\`${hl}\n${str}\n\`\`\``);
   }
 
-  static setMsg(msg) {
+  static set(client, msg, args) {
+    this.c = client;
     this.msg = msg;
+    this.author = msg.author;
+    this.g = msg.guild;
+    this.roles = this.g.roles;
+
+    this.fU = msg.mentions.users.first();
+    this.authorMember = this.g.member(this.author);
+
+    this.a = args;
   }
 
-  static setArgs(a) {
-    this.a = a;
-  }
+  static getMembers(roleName) {
+    let members = this.g.members.filter(member => {
+      return member.roles.find(e => e.name === roleName);
+    }).map(r => { 
+      return this.g.member(r.user);
+    });
 
-  static setClient(c) {
-    this.c = c;
+    console.log(`${roleName} users:`);
+    return members;
   }
 }
-Util.msg = false;
-Util.a = [];
-Util.c = null;
 
 module.exports = Util;

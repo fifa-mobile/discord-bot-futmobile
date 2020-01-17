@@ -1,7 +1,8 @@
-require('./common/home.js')();
 let u = require('./common/Util.js');
 const Discord = require('discord.js');
 const client = new Discord.Client();
+
+require('./common/home.js')(u);
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -13,14 +14,12 @@ client.on('message', msg => {
   const parsed = parser.parse(msg, prefix);
   const commands = [
     'help', 'league', 'test', 'tour', 'read',
-    'hst', 'vsa',
+    'hst', 'vsa', 't',
   ];
   const args = parsed.arguments;
   if(!parsed.success) return;
 
-  u.setMsg(msg);
-  u.setArgs(args);
-  u.setClient(client)
+  u.set(client, msg, args);
 
   if (commands.indexOf(parsed.command) === -1) {
     u.w(`no command ${parsed.command}. try $help`);
