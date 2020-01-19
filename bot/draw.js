@@ -36,7 +36,6 @@ function saveDrawing(u, sheet, players) {
     }
     sheet.bulkUpdateCells(cells, e => {
       console.log(e);
-      u.w('result drawing:');
       let mapPlayers = players.map((e, i) => {
         return `${(i+1).toString().padStart(3, ' ')}. ${e}`;
       });
@@ -79,7 +78,11 @@ function main(u, sheets) {
       let cell = cells[i];
       players.push(cell.value);
     }
-    u.w(`shuffling ${players.length} players` + '\n' + 'please wait...');
+    u.w(
+      `Shuffling ${players.length} players.`
+      + '\n' + 'Please wait...'
+      + '\n' + 'Result of drawing:'
+    );
     players = shuffle(players);
 
     title = 'draw';
