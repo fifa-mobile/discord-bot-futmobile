@@ -40,7 +40,22 @@ function saveDrawing(u, sheet, players) {
       let mapPlayers = players.map((e, i) => {
         return `${(i+1).toString().padStart(3, ' ')}. ${e}`;
       });
-      u.w(mapPlayers.join('\n'));
+
+      if (u.a[0] !== 'delay') {
+        u.w(mapPlayers.join('\n'));
+        return;
+      }
+      let delayedOutput = [];
+      let playersTmp = [];
+      for (let i = 0; i < players.length; i++) {
+        playersTmp = [];
+        for (let j = 0; j <= i; j++) {
+          playersTmp.push(mapPlayers[j]);
+        }
+        delayedOutput.push(playersTmp.join('\n'));
+      }
+      delayedOutput.push(playersTmp.join('\n') + '\n...done!');
+      u.wd(delayedOutput);
     });
   });
 }

@@ -1,6 +1,24 @@
 class Util {
   static w(str, hl = '') {
-    this.msg.channel.send(`\`\`\`${hl}\n${str}\n\`\`\``);
+    return this.msg.channel.send(`\`\`\`${hl}\n${str}\n\`\`\``);
+  }
+
+  static wd(strs, time = 1000, hl = '') {
+    if (strs.length < 1) {
+      this.w('the string length is not enough!');
+      return;
+    }
+    let str = strs[0];
+    this.w(str).then( msg => {
+      for (let i = 1; i < strs.length; i++) {
+        str = strs[i];
+        ((str, i) => {
+          setTimeout(() => {
+            msg.edit(`\`\`\`${hl}\n${str}\n\`\`\``);
+          }, (time * i));
+        })(str, i);
+      }
+    });
   }
 
   static set(client, msg, args) {
