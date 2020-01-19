@@ -1,4 +1,10 @@
 module.exports = (u, msg, cmd, args, client) => {
+  if (cmd === 'draw') {
+    require('./common/sheets.js')(
+      require('./bot/draw.js')(u)
+      , '19HSTRRyScAtnzyYcXCFz_9rzopum5jLi7dQ5YpAgl8k'
+    );
+  }
   if (cmd === 't') {
     require('./common/sheets.js')(
       require('./bot/t.js')(u)
