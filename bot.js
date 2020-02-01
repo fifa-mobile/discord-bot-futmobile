@@ -98,4 +98,21 @@ msg.channel.send("**`$tour`** \n **Use**:Used to get information on a certain H2
    if(cmd==='help read'){
 msg.channel.send("**`$read`** \n **Use**:Used to read the latest part of the history in #one_word_story which is accessible by Apprentice 3 or higher ranked users. \n **Command**:$read \n\n **Example**:\n `$read`-show latest part of the history");
 }
+   if(cmd==='bot'){
+   const exampleEmbed = new Discord.RichEmbed()
+	.setColor('#1d9eaf')
+	.setTitle('League Bot')
+	.setURL('https://discord.js.org/')
+	.setAuthor('League Bot', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setDescription('Info on League Bot')
+	.setThumbnail('https://www.google.com/search?q=discord+bot+avatar&client=ms-android-samsung-gj-rev1&prmd=ivn&sxsrf=ACYBGNQiqOqKWbPeWDW89omSYpN9_tzkyg:1580581211158&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj_vYTt-7DnAhVLaFAKHduvBbIQ_AUoAXoECA8QAQ#imgrc=poRvFxXXvq5j6M')
+	.addField('Creator:', 'yuuyle')
+	.addBlankField()
+	.addField('Server(s):', 'AHQ Leagues', true)
+	.addField('Date created:', '2nd November 2019', true)
+	.addField('Use:', 'General purpose', true)
+	.setImage('https://www.google.com/search?q=discord+bot+avatar&client=ms-android-samsung-gj-rev1&prmd=ivn&sxsrf=ACYBGNQiqOqKWbPeWDW89omSYpN9_tzkyg:1580581211158&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj_vYTt-7DnAhVLaFAKHduvBbIQ_AUoAXoECA8QAQ#imgrc=poRvFxXXvq5j6M')
+	.setTimestamp()
+	.setFooter('This is me!', 'https://www.google.com/search?q=discord+bot+avatar&client=ms-android-samsung-gj-rev1&prmd=ivn&sxsrf=ACYBGNQiqOqKWbPeWDW89omSYpN9_tzkyg:1580581211158&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj_vYTt-7DnAhVLaFAKHduvBbIQ_AUoAXoECA8QAQ#imgrc=poRvFxXXvq5j6M');
+}
 };
