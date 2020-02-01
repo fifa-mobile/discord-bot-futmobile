@@ -1,4 +1,3 @@
-const Discord = require('discord.js');
 module.exports = (u, msg, cmd, args, client) => {
   if (cmd === 'draw') {
     require('./common/sheets.js')(
@@ -115,6 +114,6 @@ msg.channel.send("**`$read`** \n **Use**:Used to read the latest part of the his
 	.setImage('https://www.google.com/search?q=discord+bot+avatar&client=ms-android-samsung-gj-rev1&prmd=ivn&sxsrf=ACYBGNQiqOqKWbPeWDW89omSYpN9_tzkyg:1580581211158&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj_vYTt-7DnAhVLaFAKHduvBbIQ_AUoAXoECA8QAQ#imgrc=poRvFxXXvq5j6M')
 	.setTimestamp()
 	.setFooter('This is me!', 'https://www.google.com/search?q=discord+bot+avatar&client=ms-android-samsung-gj-rev1&prmd=ivn&sxsrf=ACYBGNQiqOqKWbPeWDW89omSYpN9_tzkyg:1580581211158&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj_vYTt-7DnAhVLaFAKHduvBbIQ_AUoAXoECA8QAQ#imgrc=poRvFxXXvq5j6M');
-msg.channel.send(botEmbed);
+   msg.channel.send(botEmbed);
 }
 };
