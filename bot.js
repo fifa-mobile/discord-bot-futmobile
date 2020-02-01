@@ -105,6 +105,7 @@ msg.channel.send("**`$read`** \n **Use**:Used to read the latest part of the his
 	.setURL('https://discord.gg/fzxFsks')
 	.setAuthor('League Bot')
 	.setDescription('Info on League Bot')
+        .setThumbnail()
 	.addField('Creator:', 'yuuyle')
 	.addBlankField()
 	.addField('Server(s):', 'AHQ Leagues', true)
