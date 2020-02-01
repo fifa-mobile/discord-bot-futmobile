@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 module.exports = (u, msg, cmd, args, client) => {
   if (cmd === 'draw') {
     require('./common/sheets.js')(
