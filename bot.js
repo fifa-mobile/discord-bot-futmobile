@@ -102,18 +102,16 @@ msg.channel.send("**`$read`** \n **Use**:Used to read the latest part of the his
    const botEmbed = new Discord.RichEmbed()
 	.setColor('#1d9eaf')
 	.setTitle('League Bot')
-	.setURL('https://discord.js.org/')
-	.setAuthor('League Bot', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setURL('https://discord.gg/fzxFsks')
+	.setAuthor('League Bot')
 	.setDescription('Info on League Bot')
-	.setThumbnail('https://www.google.com/search?q=discord+bot+avatar&client=ms-android-samsung-gj-rev1&prmd=ivn&sxsrf=ACYBGNQiqOqKWbPeWDW89omSYpN9_tzkyg:1580581211158&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj_vYTt-7DnAhVLaFAKHduvBbIQ_AUoAXoECA8QAQ#imgrc=poRvFxXXvq5j6M')
 	.addField('Creator:', 'yuuyle')
 	.addBlankField()
 	.addField('Server(s):', 'AHQ Leagues', true)
 	.addField('Date created:', '2nd November 2019', true)
 	.addField('Use:', 'General purpose', true)
-	.setImage('https://www.google.com/search?q=discord+bot+avatar&client=ms-android-samsung-gj-rev1&prmd=ivn&sxsrf=ACYBGNQiqOqKWbPeWDW89omSYpN9_tzkyg:1580581211158&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj_vYTt-7DnAhVLaFAKHduvBbIQ_AUoAXoECA8QAQ#imgrc=poRvFxXXvq5j6M')
 	.setTimestamp()
-	.setFooter('This is me!', 'https://www.google.com/search?q=discord+bot+avatar&client=ms-android-samsung-gj-rev1&prmd=ivn&sxsrf=ACYBGNQiqOqKWbPeWDW89omSYpN9_tzkyg:1580581211158&source=lnms&tbm=isch&sa=X&ved=2ahUKEwj_vYTt-7DnAhVLaFAKHduvBbIQ_AUoAXoECA8QAQ#imgrc=poRvFxXXvq5j6M');
+	.setFooter('This is me!');
    msg.channel.send(botEmbed);
 }
 };
