@@ -99,6 +99,7 @@ msg.channel.send("**`$tour`** \n **Use**:Used to get information on a certain H2
 msg.channel.send("**`$read`** \n **Use**:Used to read the latest part of the history in #one_word_story which is accessible by Apprentice 3 or higher ranked users. \n **Command**:$read \n\n **Example**:\n `$read`-show latest part of the history");
 }
    if(cmd==='bot'){
+     const Discord = require('discord.js');
    const botEmbed = new Discord.RichEmbed()
 	.setColor('#1d9eaf')
 	.setTitle('League Bot')
