@@ -81,7 +81,7 @@ var pong=pongName;
 msg.channel.send(pong);
 }
    if(!args[0] && cmd==='help'){
-msg.channel.send(" `Standard Command List`\nUse `$help [command]` if you want to get more info on a specific command. \n\n  **1.Info.**-`help` `ping` `bot` ;\n **2.League**-`league` `tour`; \n **3.Fun**- `read`;\n\n `>Don't include brackets when using the commands.`");
+msg.channel.send(" ```Standard Command List```\nUse `$help [command]` if you want to get more info on a specific command. \n\n  **1.Info.**-`help` `ping` `bot` ;\n **2.League**-`league` `tour`; \n **3.Fun**- `read`;\n\n `>Don't include brackets when using the commands.`");
 }
    if(cmd==='help' && args[0] && args[0] === 'help'){
 msg.channel.send("**`$help`** \n **Use**:Used to show a list of commands.Also shows command specific help. \n **Command**:$help [command] \n\n **Example**:\n `$help`-Shows command list. \n `$help league`-Explains the use of the `league` command.\n\n `>Don't include brackets when using the commands.`");
