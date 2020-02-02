@@ -22,7 +22,7 @@ client.on('message', msg => {
   u.set(client, msg, args);
 
   if (commands.indexOf(parsed.command) === -1) {
-    u.w(`There is no ${parsed.command} command. try $help`);
+    u.w(`There is no ${parsed.command} command. Try $help.`);
     return;
   }
   require('./bot.js')(u, msg, parsed.command, args, client);
