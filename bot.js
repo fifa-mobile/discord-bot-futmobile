@@ -37,7 +37,7 @@ module.exports = (u, msg, cmd, args, client) => {
         !u.a[0].includes('round')
       )
     ) {
-      u.w('the $vsa commands are: standing/fixture/score/round');
+      u.w('The $vsa commands are: standing/fixture/score/round');
       return;
     }
 
@@ -81,25 +81,25 @@ var pong=pongName;
 msg.channel.send(pong);
 }
    if(!args[0] && cmd==='help'){
-msg.channel.send(" ```Standard Command List```\nUse `$help [command]` if you want to get more info on a specific command. \n\n  **1.Info.**-`help` `ping` `bot` ;\n **2.League**-`league` `tour`; \n **3.Fun**- `read`;\n\n ```>Don't include brackets when using the commands.```");
+msg.channel.send(" ```Standard Command List```\nℹ | Use `$help [command]` if you want to get more info on a specific command. \n\n  **1.Info.**-`help` `ping` `bot` ;\n **2.League**-`league` `tour`; \n **3.Fun**- `read`;\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='help' && args[0] && args[0] === 'help'){
-msg.channel.send("**`$help`** \n **Use**:Used to show a list of commands.Also shows command specific help. \n **Command**:$help [command] \n\n **Example**:\n `$help`-Shows command list. \n `$help league`-Explains the use of the `league` command.\n\n `>Don't include brackets when using the commands.`");
+msg.channel.send("**```$help```** \n **Use**:Used to show a list of commands.Also shows command specific help. \n **Command**:$help [command] \n\n **Example**:\n `$help`-Shows command list. \n `$help league`-Explains the use of the `league` command.\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='help'&& args[0] && args[0] === 'ping' ){
-msg.channel.send("**`$ping`** \n **Use**:Used to check if bot is running. \n **Command**:$ping \n\n **Example**:\n `$ping`-Bot answers if everything is good.\n\n `>Don't include brackets when using the commands.`");
+msg.channel.send("**```$ping```** \n **Use**:Used to check if bot is running. \n **Command**:$ping \n\n **Example**:\n `$ping`-Bot answers if everything is good.\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='help'&& args[0] && args[0] === 'league' ){
-msg.channel.send("**`$league`** \n **Use**:Used to get information on AHQ League. \n **Command**:$league `[orderBy | limit | reverse]` \n `orderBy`-name (alphabetical order),ovr (overall rating order),chem (chamistry order),total(overall rating+chemistry order)\n `limit`-number of players listed \n `reverse`-1(normal order),0(reversed order)\n\n **Example**:\n`$league`-Lists players based on their ovr+chm points. \n `$league name 15`-Lists first 15 players in alphabetical order. \n `$league ovr 10 0`-Lists last 10 players in ovr order.\n\n `>Don't include brackets when using the commands.`");
+msg.channel.send("**```$league```** \n **Use**:Used to get information on AHQ League. \n **Command**:$league `[orderBy | limit | reverse]` \n `orderBy`-name (alphabetical order),ovr (overall rating order),chem (chamistry order),total(overall rating+chemistry order)\n `limit`-number of players listed \n `reverse`-1(normal order),0(reversed order)\n\n **Example**:\n`$league`-Lists players based on their ovr+chm points. \n `$league name 15`-Lists first 15 players in alphabetical order. \n `$league ovr 10 0`-Lists last 10 players in ovr order.\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='help'&& args[0] && args[0] === 'tour'){
-msg.channel.send("**`$tour`** \n **Use**:Used to get information on a certain H2H Tournament going on. \n **Command**:$tour `[fixtures | standing | score]` \n $tour fixtures `[user | played/left]` \n $tour score `<match_id>` `home_score` `away_score`\n\n **Example**:\n `$tour fixtures @user left`-shows a user's left fixtures \n `$tour standing`-shows tourney's current standing \n `$tour score 19 2 1`-updates match 19 with the 2-1 result.\n\n `>Don't include brackets when using the commands.`");
+msg.channel.send("**```$tour```** \n **Use**:Used to get information on a certain H2H Tournament going on. \n **Command**:$tour `[fixtures | standing | score]` \n $tour fixtures `[user | played/left]` \n $tour score `<match_id>` `home_score` `away_score`\n\n **Example**:\n `$tour fixtures @user left`-shows a user's left fixtures \n `$tour standing`-shows tourney's current standing \n `$tour score 19 2 1`-updates match 19 with the 2-1 result.\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='help' && args[0] && args[0] === 'read' ){
-msg.channel.send("**`$read`** \n **Use**:Used to read the latest part of the history in #one_word_story which is accessible by Apprentice 3 or higher ranked users. \n **Command**:$read \n\n **Example**:\n `$read`-shows latest part of the history.\n\n `>Don't include brackets when using the commands.`");
+msg.channel.send("**```$read```** \n **Use**:Used to read the latest part of the history in #one_word_story which is accessible by Apprentice 3 or higher ranked users. \n **Command**:$read \n\n **Example**:\n `$read`-shows latest part of the history.\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='help' && args[0] && args[0] === 'bot' ){
-msg.channel.send("**`$bot`** \n **Use**:Used to get general information on bot. \n **Command**:$bot \n\n **Example**:\n `$bot`-shows an embed with info on bot.\n\n `>Don't include brackets when using the commands.`");
+msg.channel.send("**```$bot```** \n **Use**:Used to get general information on bot. \n **Command**:$bot \n\n **Example**:\n `$bot`-shows an embed with info on bot.\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='bot'){
      const Discord = require('discord.js');
