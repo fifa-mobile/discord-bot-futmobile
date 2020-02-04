@@ -119,8 +119,8 @@ msg.channel.send("**```ℹ | $bot```** \n **Use**:Used to get general informatio
 	.setFooter('This is me!');
    msg.channel.send(botEmbed);
 }
-   if(cmd==='8ball'&& args[0] && args[0] !== NULL){
-   const 8ballAsw = [
+   if(cmd==='8ball'&& args[0] && args[0] !== null){
+     const _8ballAsw = [
    "🎱 | Yep!",
    "🎱 | You may rely on it.",
    "🎱 | Without a doubt!",
@@ -132,7 +132,7 @@ msg.channel.send("**```ℹ | $bot```** \n **Use**:Used to get general informatio
    "🎱 | Outlook not so good.",
    "🎱 | Very doubtful.",
 ];
-   let 8ball = 8ballAsw[Math.floor(Math.random()* 8ballAsw.length)];
-   msg.channel.send(8ball);
+   let _8ball = _8ballAsw[Math.floor(Math.random()* _8ballAsw.length)];
+   msg.channel.send(_8ball);
 }
 };
