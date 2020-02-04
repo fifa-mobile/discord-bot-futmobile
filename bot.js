@@ -119,7 +119,7 @@ msg.channel.send("**```ℹ | $bot```** \n **Use**:Used to get general informatio
 	.setFooter('This is me!');
    msg.channel.send(botEmbed);
 }
-   if(cmd==='8ball'&& args[0] !== NULL){
+   if(cmd==='8ball'&& args[0] && args[0] !== NULL){
    const 8ballAsw = [
    "🎱 | Yep!",
    "🎱 | You may rely on it.",
