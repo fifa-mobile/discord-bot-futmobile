@@ -50,7 +50,7 @@ module.exports = (u, msg, cmd, args, client) => {
       require('./bot/league.js')(u, msg, args)
     );
   }
-  if (cmd === 'ping'){
+  if (cmd === 'ping' && args[0] && args[0] === 0){
     const pingTypes = [
   "🏓|**Pong.**Testing,testing.Is this thing working?",
   "🏓|**Pong.**Match point.Let's see what you've got.",
