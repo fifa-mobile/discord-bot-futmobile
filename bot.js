@@ -102,7 +102,7 @@ msg.channel.send("**```ℹ | $read```** \n **Use**:Used to read the latest part 
 msg.channel.send("**```ℹ | $bot```** \n **Use**:Used to get general information on bot. \n **Command**:$bot \n\n **Example**:\n `$bot`-shows an embed with info on bot.\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='help' && args[0] && args[0] === '8ball' || cmd==='8ball' && args[0] && args[0]===null){
-msg.channel.send("**```ℹ | $8ball```** \n **Use**:Used to get an answer of a \"Yes/No\" question based on my (often controversial) oppinion. \n **Command**:$8ball `[question]` \n\n **Example**:\n `$8ball Am I a bot?`-Gives an answer to the question.\n\n ```>Don't include brackets when using the commands.```");
+msg.channel.send("**```ℹ | $8ball```** \n **Use**:Used to get an answer of a \"Yes/No\" question based on my (often controversial) opinion. \n **Command**:$8ball `[question]` \n\n **Example**:\n `$8ball Am I a bot?`-Gives an answer to the question.\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='bot'){
      const Discord = require('discord.js');
