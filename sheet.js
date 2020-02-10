@@ -44,7 +44,7 @@ module.exports = (args, msg, client) => {
             if (
               !args[1] || !args[2] || !args[3]
             ) {
-              msg.channel.send('you need 3 arguments!');
+              msg.channel.send('You need 3 arguments!');
               break;
             }
             if (
@@ -55,7 +55,7 @@ module.exports = (args, msg, client) => {
               !(!isNaN(args[3]) && args[3] > 0)
             ) {
               msg.channel.send(
-                'the arguments must be unsigned integer !');
+                'The arguments must be unsigned integers !');
               break;
             }
             require('./tour-score')(args, msg, sheet);
