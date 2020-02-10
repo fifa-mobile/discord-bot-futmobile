@@ -130,7 +130,7 @@ module.exports = (args, msg, sheet, players, isStanding) => {
           cell.value = args[2] + ' - ' + args[3];
         }
         cell.save();
-        msg.channel.send('the fixture updated!');
+        msg.channel.send('ℹ|Fixture updated!');
       }
       let score = cell.value.split('-');
       score = score.map(s => s.trim());
