@@ -138,4 +138,7 @@ msg.channel.send("**```ℹ | $8ball```** \n **Use**:Used to get an answer of a \
    let _8ball = _8ballAsw[Math.floor(Math.random()* _8ballAsw.length)];
    msg.channel.send(_8ball);
 }
+   if(cmd==='announce' && member.role.has('Staff'){
+   msg.channel.send(args[]);
+}
 };
