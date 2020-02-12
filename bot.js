@@ -138,7 +138,14 @@ msg.channel.send("**```ℹ | $8ball```** \n **Use**:Used to get an answer of a \
    let _8ball = _8ballAsw[Math.floor(Math.random()* _8ballAsw.length)];
    msg.channel.send(_8ball);
 }
-   if(cmd==='announce' && member.role.has('Staff'){
+   if(cmd==='$'){
+   if(member.role.has('Staff') ){
+   if(args[0] && args[0]==="announce"){
+   msg.delete;
    msg.channel.send(args[]);
+   }
+}else{
+   msg.channel.send("You do not have enough permissions to use this command.")
+}
 }
 };
