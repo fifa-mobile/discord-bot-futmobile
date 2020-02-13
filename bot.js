@@ -141,7 +141,7 @@ msg.channel.send("**```ℹ | $8ball```** \n **Use**:Used to get an answer of a \
    if(cmd==='$'){
    if(member.role.has('Staff') ){
    if(args[0] && args[0]==="announce"){
-   msg.delete(last_message_content);
+   msg.delete(lastMessage);
    msg.channel.send(args[]);
    }
 }else{
