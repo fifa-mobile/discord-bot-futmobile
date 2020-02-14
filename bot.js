@@ -142,7 +142,7 @@ msg.channel.send("**```ℹ | $8ball```** \n **Use**:Used to get an answer of a \
    if(member.role.has('Staff') ){
    if(args[0] && args[0]==="announce"){
    msg.delete(lastMessage);
-   msg.channel.send(args[]);
+     //msg.channel.send(args[]);
    }
 }else{
    msg.channel.send("You do not have enough permissions to use this command.")
