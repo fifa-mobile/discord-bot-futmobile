@@ -110,7 +110,7 @@ msg.channel.send("**```ℹ | $8ball```** \n **Use**:Used to get an answer of a \
    const botEmbed = new Discord.RichEmbed()
 	.setColor('#1d9eaf')
 	.setTitle('League Bot')
-	.setURL('https://discord.gg/fzxFsks')
+	.setURL('https://github.com/fifa-mobile')
 	.setAuthor('League Bot')
 	.setDescription('Info on League Bot')
         .setThumbnail()
@@ -145,7 +145,7 @@ msg.channel.send("**```ℹ | $8ball```** \n **Use**:Used to get an answer of a \
       if (args[0] && args[0]==="announce") {
         if (!args[1]) {
           msg.channel.send(
-            'what do you want to announce?'
+            'What do you want to announce?'
           );
           return;
         }
