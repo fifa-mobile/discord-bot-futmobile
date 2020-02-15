@@ -106,7 +106,7 @@ msg.channel.send("**```ℹ | $bot```** \n **Use**:Used to get general informatio
 msg.channel.send("**```ℹ | $8ball```** \n **Use**:Used to get an answer of a \"Yes/No\" question based on my (often controversial) opinion. \n **Command**:$8ball `[question]` \n\n **Example**:\n `$8ball Am I a bot?`-Gives an answer to the question.\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='help' && args[0] && args[0] === 'announce'){
-msg.channel.send("**```ℹ | $x announce```** \n **Use**:Used to make me say something (usually announcement). \n **Command**:$x announce `[text]` \n\n **Example**:\n `$x announce Hi!`-Command gets deleted and I say "Hi!".\n\n ```>Don't include brackets when using the commands.```");
+msg.channel.send("**```ℹ | $x announce```** \n **Use**:Used to make me say something (usually announcement). \n **Command**:$x announce `[text]` \n\n **Example**:\n `$x announce Hi!`-Command gets deleted and I say \"Hi!\".\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='bot'){
      const Discord = require('discord.js');
