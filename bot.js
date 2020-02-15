@@ -118,7 +118,6 @@ msg.channel.send("**```ℹ | $x announce```** \n **Use**:Used to make me say som
 	.setDescription('Info on League Bot')
         .setThumbnail()
 	.addField('Creator:', 'yuuyle')
-	.addBlankField()
 	.addField('Server(s):', 'AHQ Leagues', true)
 	.addField('Date created:', '2nd November 2019', true)
 	.addField('Use:', 'General purpose', true)
