@@ -116,7 +116,7 @@ msg.channel.send("**```ℹ | $x announce```** \n **Use**:Used to make me say som
 	.setURL('https://github.com/fifa-mobile')
 	.setAuthor('League Bot')
 	.setDescription('Info on League Bot')
-        .setThumbnail()
+        .setThumbnail('https://github.com/fifa-mobile/images/blob/gh-pages/discordbot-bot-discord-11563261320iwm1tpnosh.png')
 	.addField('Creator:', 'yuuyle')
 	.addField('Server(s):', 'AHQ Leagues', true)
 	.addField('Date created:', '2nd November 2019', true)
