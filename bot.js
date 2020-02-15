@@ -113,7 +113,7 @@ msg.channel.send("**```ℹ | $x announce```** \n **Use**:Used to make me say som
    const botEmbed = new Discord.RichEmbed()
 	.setColor('#1d9eaf')
 	.setTitle('League Bot')
-	.setURL('https://github.com/fifa-mobile')
+	.setURL('https://fifa-mobile.github.io/images/discordbot-bot-discord-11563261320iwm1tpnosh.png')
 	.setAuthor('League Bot')
 	.setDescription('Info on League Bot')
         .setThumbnail('https://github.com/fifa-mobile/images/blob/gh-pages/discordbot-bot-discord-11563261320iwm1tpnosh.png')
