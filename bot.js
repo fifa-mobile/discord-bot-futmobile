@@ -82,7 +82,7 @@ var pong=pongName;
 msg.channel.send(pong);
 }
    if(!args[0] && cmd==='help'){
-msg.channel.send(" ```Standard Command List```\nℹ | Use `$help [command]` if you want to get more info on a specific command. \n\n  **1.Info.**-`help` `ping` `bot` ;\n **2.League**-`league` `tour`; \n **3.Fun**- `read` `8ball`;\n\n ```>Don't include brackets when using the commands.```");
+msg.channel.send(" ```Standard Command List```\nℹ | Use `$help [command]` if you want to get more info on a specific command. \n\n  **1.Info.**-`help` `ping` `bot` ;\n **2.League**-`league` `tour`; \n**3.Fun**- `read` `8ball`;\n**4.Mod**-`announce`;\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='help' && args[0] && args[0] === 'help'){
 msg.channel.send("**```ℹ | $help```** \n **Use**:Used to show a list of commands.Also shows command specific help. \n **Command**:$help `[command]` \n\n **Example**:\n `$help`-Shows command list. \n `$help league`-Explains the use of the `league` command.\n\n ```>Don't include brackets when using the commands.```");
@@ -104,6 +104,9 @@ msg.channel.send("**```ℹ | $bot```** \n **Use**:Used to get general informatio
 }
    if(cmd==='help' && args[0] && args[0] === '8ball' || cmd==='8ball' && args[0] && args[0]===null){
 msg.channel.send("**```ℹ | $8ball```** \n **Use**:Used to get an answer of a \"Yes/No\" question based on my (often controversial) opinion. \n **Command**:$8ball `[question]` \n\n **Example**:\n `$8ball Am I a bot?`-Gives an answer to the question.\n\n ```>Don't include brackets when using the commands.```");
+}
+   if(cmd==='help' && args[0] && args[0] === 'announce'){
+msg.channel.send("**```ℹ | $x announce```** \n **Use**:Used to make me say something (usually announcement). \n **Command**:$x announce `[text]` \n\n **Example**:\n `$x announce Hi!`-Command gets deleted and I say "Hi!".\n\n ```>Don't include brackets when using the commands.```");
 }
    if(cmd==='bot'){
      const Discord = require('discord.js');
