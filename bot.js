@@ -1,4 +1,5 @@
 module.exports = (u, msg, cmd, args, client) => {
+  console.log(cmd, args);
   if (cmd === 'draw') {
     require('./common/sheets.js')(
       require('./bot/draw.js')(u)
@@ -138,14 +139,28 @@ msg.channel.send("**```ℹ | $8ball```** \n **Use**:Used to get an answer of a \
    let _8ball = _8ballAsw[Math.floor(Math.random()* _8ballAsw.length)];
    msg.channel.send(_8ball);
 }
-   if(cmd==='$'){
-   if(member.role.has('Staff') ){
-   if(args[0] && args[0]==="announce"){
-   msg.delete(lastMessage);
-     //msg.channel.send(args[]);
-   }
-}else{
-   msg.channel.send("You do not have enough permissions to use this command.")
-}
-}
+
+  if (cmd==='x') {
+    if (msg.member.roles.find(r => r.name === 'Staff')) {
+      if (args[0] && args[0]==="announce") {
+        if (!args[1]) {
+          msg.channel.send(
+            'what do you want to announce?'
+          );
+          return;
+        }
+        let text = [];
+        for (let i = 1; i < args.length; i++) {
+          text.push(args[i]);
+        }
+        msg.channel.send(text.join(' '));
+        msg.delete();
+      }
+    } else {
+      msg.channel.send(
+        "You do not have enough permissions"
+        + " to use this command."
+      );
+    }
+  }
 };

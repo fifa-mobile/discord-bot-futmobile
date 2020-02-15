@@ -29,7 +29,7 @@ class Util {
     this.roles = this.g.roles;
 
     this.fU = msg.mentions.users.first();
-    this.authorMember = this.g.member(this.author);
+    this.member = this.g.member(this.author);
 
     this.a = args;
   }
