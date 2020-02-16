@@ -6,12 +6,6 @@ module.exports = (u, msg, cmd, args, client) => {
       , '19HSTRRyScAtnzyYcXCFz_9rzopum5jLi7dQ5YpAgl8k'
     );
   }
-  if (cmd === 't') {
-    require('./common/sheets.js')(
-      require('./bot/t.js')(u)
-      , '19HSTRRyScAtnzyYcXCFz_9rzopum5jLi7dQ5YpAgl8k'
-    );
-  }
   if (cmd === 'hst') {
     require('./bot/hst.js')(u, msg, cmd, args, client);
   }

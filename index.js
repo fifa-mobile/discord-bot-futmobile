@@ -14,8 +14,8 @@ client.on('message', msg => {
   const parsed = parser.parse(msg, prefix);
   const commands = [
     'help', 'league', 'test', 'tour', 'read',
-    'hst', 'vsa', 't', 'draw','ping', 'bot', '8ball'
-    , 'x' ,
+    'hst', 'vsa', 'draw','ping', 'bot', '8ball'
+    , 'x',
   ];
   const args = parsed.arguments;
   if(!parsed.success) return;

@@ -15,10 +15,6 @@ module.exports = (u) => {
       res.statusCode = 404;
       res.end('404, sorry!\n');
     }
-    /*
-    handler = router.route(req);
-    handler.process(req, res);
-    */
   });
 
   const PORT = process.env.PORT || 5000;
