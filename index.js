@@ -15,7 +15,7 @@ client.on('message', msg => {
   const commands = [
     'help', 'league', 'test', 'tour', 'read',
     'hst', 'vsa', 'draw','ping', 'bot', '8ball'
-    , 'x',
+    , 'x', 'list',
   ];
   const args = parsed.arguments;
   if(!parsed.success) return;

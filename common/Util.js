@@ -41,8 +41,21 @@ class Util {
       return this.g.member(r.user);
     });
 
-    console.log(`${roleName} users:`);
     return members;
+  }
+
+  static getRole(mention) {
+    const string = mention.join(' ');
+    const matches = mention[0].match(/^<@&!?(\d+)>$/);
+    try {
+      const id = matches[1];
+      return this.g.roles.get(id);
+    } catch (e) {
+      return this.g.roles.find(
+        e => e.name === string
+      );
+    }
+    return false;
   }
 }
 
