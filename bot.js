@@ -2,7 +2,7 @@ module.exports = (u, msg, cmd, args, client) => {
   console.log(cmd, args);
   if (cmd === 'list') {
     if (!args[0]) {
-      u.w('please specify the role');
+      u.w('Please specify the role.');
       return;
     }
     require('./bot/list.js')(u, cmd, args);
