@@ -145,6 +145,13 @@ msg.channel.send("**```ℹ | $list```** \n **Use**:Used to make a list of users 
    let _8ball = _8ballAsw[Math.floor(Math.random()* _8ballAsw.length)];
    msg.channel.send(_8ball);
 }
+  /* if(cmd==='credits' && args[0] && args[0]===null || cmd==='help' && args[0] && args[0]==='credits'){
+   Here will be info on the credits command
+   }
+   if(cmd==='daily' && args[0] && args[0]===null){
+   Bot will use an if/else command to see if there is left more than 0 seconds until next daily.
+If yes it will message "Daily credits reset in"+time variable +"!".Else it will add the user 100 credits and start timer.
+   } */
 
   if (cmd==='x') {
     if (msg.member.roles.find(r => r.name === 'Staff')) {
