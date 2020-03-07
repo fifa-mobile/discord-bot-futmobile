@@ -155,6 +155,10 @@ If yes it will message "Daily credits reset in"+time variable +"!".Else it will 
    if(cmd==='credits' && args[0] && args[0]==='balance'){
    Send message:"You have"+balance+"FIFA Points!"
 }
+   if(cmd==='credits' && args [0] && args[0]==='transfer'){
+   Removes user x amount of coins and adds same amount to reciever.
+   msg.channel.send('ℹ | Transaction done.');
+}
  */
 
   if (cmd==='x') {
